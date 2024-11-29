@@ -16,8 +16,8 @@ A magical AI-powered dream interpretation platform with a cosmic theme. Explore 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Python 3.8+
-- Groq API Key
+- [Python 3.8+](https://www.python.org/downloads/)
+- [Groq API Key](https://console.groq.com/keys)
 
 ### Installation
 
