@@ -2,7 +2,7 @@
 
 A magical AI-powered dream interpretation platform with a cosmic theme. Explore your subconscious through an immersive space-themed interface that brings your dreams to life.
 
-![Dream Interpreter Preview]([static/images/preview.png](https://cdn.discordapp.com/attachments/1311705227639918643/1312164674120323073/image.png?ex=674b8015&is=674a2e95&hm=b5ae375ea0684b20d8907fdb4ac0fc4cef64e0e1b2bac8a5557a62a741334fb7&))
+![Dream Interpreter Preview](https://cdn.discordapp.com/attachments/1311705227639918643/1312164674120323073/image.png?ex=674b8015&is=674a2e95&hm=b5ae375ea0684b20d8907fdb4ac0fc4cef64e0e1b2bac8a5557a62a741334fb7&)
 
 ## ✨ Features
 
