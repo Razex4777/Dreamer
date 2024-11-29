@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Your Dream Journal{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto px-4">
+    <div class="dream-journal-container">
+        <div class="header-section mb-8 text-center">
+            <h1 class="text-3xl font-bold text-blue-300 mb-4">✨ Your Dream Journal</h1>
+            <a href="{{ url_for('interpret_dream') }}" class="cta-button inline-flex items-center">
+                <i data-lucide="plus-circle" class="w-5 h-5 mr-2"></i>
+                Record New Dream
+            </a>
+        </div>
+
+        <div class="dreams-container space-y-6">
+            {% if dreams %}
+                {% for dream in dreams %}
+                <div class="dream-card bg-opacity-10 bg-white backdrop-blur-lg rounded-lg p-6 shadow-lg border border-opacity-20 border-white relative z-10">
+                    <div class="dream-header mb-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold text-blue-300">
+                                <i data-lucide="calendar" class="inline w-5 h-5 mr-2"></i>
+                                Dream from {{ dream.date }}
+                            </h3>
+                        </div>
+                        <div class="emotion-tag inline-flex items-center px-3 py-1 rounded-full text-sm" 
+                             style="background: rgba(100, 255, 218, 0.1); border: 1px solid rgba(100, 255, 218, 0.3);">
+                            <i data-lucide="heart" class="w-4 h-4 mr-1 text-blue-300"></i>
+                            <span class="text-blue-200">Emotion: {{ dream.emotion }}</span>
+                        </div>
+                    </div>
+
+                    <div class="dream-content mb-6">
+                        <p class="text-white leading-relaxed">{{ dream.description }}</p>
+                    </div>
+
+                    <div class="interpretation-section">
+                        <h4 class="text-lg font-semibold text-blue-300 mb-3">
+                            <i data-lucide="sparkles" class="inline w-5 h-5 mr-2"></i>
+                            Interpretation
+                        </h4>
+                        <div class="interpretation-content text-white leading-relaxed">
+                            {{ dream.interpretation | safe }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="text-center py-12">
+                    <p class="text-xl text-gray-600 mb-4">Your dream journal is empty</p>
+                    <p class="text-gray-500">Start by recording your first dream!</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
