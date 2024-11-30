@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore your dreams in a cosmic realm. DreamScape AI interprets your dreams with advanced AI, helping you understand your subconscious through a magical, space-themed journey.">
+    <title>Dream Interpreter - Lo {% block title %}{% endblock %}</title>
+    
+    <!-- Favicons for different platforms -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <meta name="theme-color" content="#1a1a2e">
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <audio autoplay loop style="display: none;">
+        <source src="{{ url_for('static', filename='music/background.mp3') }}" type="audio/mp3">
+    </audio>
+</head>
+<body class="bg-deep-space">
+    <nav class="nav-glass">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="{{ url_for('home') }}" class="flex items-center py-4 px-2">
+                            <i data-lucide="moon-star" class="w-8 h-8 text-blue-300 mr-2"></i>
+                            <span class="font-semibold text-white text-lg">Dream Interpreter</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('dashboard') }}" class="nav-link">
+                            <i data-lucide="layout-dashboard" class="w-5 h-5 mr-1"></i>
+                            Dashboard
+                        </a>
+                        <a href="{{ url_for('interpret_dream') }}" class="nav-link">
+                            <i data-lucide="brain" class="w-5 h-5 mr-1"></i>
+                            New Dream
+                        </a>
+                        <a href="{{ url_for('logout') }}" class="nav-button-danger">
+                            <i data-lucide="log-out" class="w-5 h-5 mr-1"></i>
+                            Logout
+                        </a>
+                    {% else %}
+                        <a href="{{ url_for('login') }}" class="nav-link">
+                            <i data-lucide="log-in" class="w-5 h-5 mr-1"></i>
+                            Login
+                        </a>
+                        <a href="{{ url_for('register') }}" class="nav-button">
+                            <i data-lucide="user-plus" class="w-5 h-5 mr-1"></i>
+                            Register
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer-glass">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <div class="text-blue-300">
+                    <p class="text-sm">Developed by: <span class="text-purple-300 font-medium">Gasmi M Abd el moumene</span> (Razex)</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/Razex4777" target="_blank" class="text-blue-300 hover:text-purple-300 transition-colors" title="GitHub">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.instagram.com/thevibevesse/profilecard/?igsh=dG1iZTZycGdrMzBu" target="_blank" class="text-blue-300 hover:text-purple-300 transition-colors" title="Instagram">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@thevibevesse?_t=8ro9BO9J53b&_r=1" target="_blank" class="text-blue-300 hover:text-purple-300 transition-colors" title="TikTok">
+                        <i data-lucide="video" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <div class="text-blue-200 text-sm">
+                    <p>&copy; 2024 Dream Interpreter. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

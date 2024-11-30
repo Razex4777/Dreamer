@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Share Your Dream{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <div class="dream-form-container bg-opacity-10 bg-white backdrop-blur-lg rounded-lg p-8 shadow-lg border border-opacity-20 border-white">
+        <h1 class="text-3xl font-bold text-blue-300 mb-6">✨ Share Your Dream</h1>
+        
+        <form id="dream-form" class="space-y-6">
+            <div class="space-y-2">
+                <label for="dream_content" class="block text-lg font-medium text-blue-200">
+                    <i data-lucide="moon" class="inline-block w-5 h-5 mr-2"></i>
+                    Describe your dream in detail
+                </label>
+                <textarea 
+                    id="dream_content" 
+                    name="dream_content" 
+                    rows="6" 
+                    class="dream-input w-full rounded-lg bg-opacity-10 bg-white backdrop-blur-md border border-blue-300 border-opacity-30 text-white placeholder-blue-200 placeholder-opacity-50 focus:ring-2 focus:ring-blue-300 focus:border-transparent"
+                    placeholder="What happened in your dream?"
+                    required
+                ></textarea>
+            </div>
+
+            <div class="space-y-2">
+                <label for="emotion" class="block text-lg font-medium text-blue-200">
+                    <i data-lucide="heart" class="inline-block w-5 h-5 mr-2"></i>
+                    How did you feel in the dream?
+                </label>
+                <select 
+                    id="emotion" 
+                    name="emotion" 
+                    class="dream-input w-full rounded-lg bg-opacity-10 bg-white backdrop-blur-md border border-blue-300 border-opacity-30 text-white focus:ring-2 focus:ring-blue-300 focus:border-transparent"
+                    required
+                >
+                    <option value="" disabled selected class="text-gray-400">Select an emotion...</option>
+                    <option value="joy">Joy</option>
+                    <option value="fear">Fear</option>
+                    <option value="sadness">Sadness</option>
+                    <option value="anxiety">Anxiety</option>
+                    <option value="peace">Peace</option>
+                    <option value="confusion">Confusion</option>
+                    <option value="excitement">Excitement</option>
+                </select>
+            </div>
+
+            <div class="space-y-2">
+                <label for="context" class="block text-lg font-medium text-blue-200">
+                    <i data-lucide="book-open" class="inline-block w-5 h-5 mr-2"></i>
+                    Any relevant life context? (Optional)
+                </label>
+                <textarea 
+                    id="context" 
+                    name="context" 
+                    rows="3" 
+                    class="dream-input w-full rounded-lg bg-opacity-10 bg-white backdrop-blur-md border border-blue-300 border-opacity-30 text-white placeholder-blue-200 placeholder-opacity-50 focus:ring-2 focus:ring-blue-300 focus:border-transparent"
+                    placeholder="What's happening in your life that might relate to this dream?"
+                ></textarea>
+            </div>
+
+            <button 
+                type="submit" 
+                class="w-full cta-button justify-center py-4"
+            >
+                <i data-lucide="sparkles" class="w-5 h-5 mr-2"></i>
+                Interpret Dream
+            </button>
+        </form>
+    </div>
+
+    <div id="interpretation" class="mt-8"></div>
+</div>
+{% endblock %}

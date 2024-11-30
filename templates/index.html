@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto relative">
+    <!-- Sleeping person illustration -->
+    <div class="dream-scene">
+        <div class="bed">
+            <svg class="sleeping-person" viewBox="0 0 24 24" width="240" height="240">
+                <path d="M21 16V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8" class="bed-frame"></path>
+                <path d="M19 16v2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-2" class="bed-base"></path>
+                <path d="M12 8c0-2.209 1.791-4 4-4s4 1.791 4 4" class="pillow"></path>
+                <path d="M2 16h20" class="mattress"></path>
+                <!-- Sleeping Z's -->
+                <g class="sleeping-zs">
+                    <text x="16" y="4" class="z1">z</text>
+                    <text x="18" y="2" class="z2">z</text>
+                    <text x="20" y="0" class="z3">Z</text>
+                </g>
+            </svg>
+        </div>
+        <!-- Dream bubbles -->
+        <div class="dream-bubbles">
+            <div class="bubble b1"><i data-lucide="moon-star"></i></div>
+            <div class="bubble b2"><i data-lucide="sparkles"></i></div>
+            <div class="bubble b3"><i data-lucide="cloud-moon"></i></div>
+        </div>
+    </div>
+
+    <div class="text-center mb-12 dream-text">
+        <h1 class="text-4xl font-bold text-white mb-4">Unlock Your Dream's Secrets</h1>
+        <p class="text-xl text-blue-200">Journey through your subconscious with AI-powered dream interpretation</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="feature-card">
+            <i data-lucide="brain-circuit" class="feature-icon"></i>
+            <h3 class="text-xl font-semibold text-white mb-3">AI Analysis</h3>
+            <p class="text-blue-200">Advanced AI interprets your dreams with psychological insight</p>
+        </div>
+        <div class="feature-card">
+            <i data-lucide="book-marked" class="feature-icon"></i>
+            <h3 class="text-xl font-semibold text-white mb-3">Dream Journal</h3>
+            <p class="text-blue-200">Keep track of your dreams in your personal diary</p>
+        </div>
+        <div class="feature-card">
+            <i data-lucide="radar" class="feature-icon"></i>
+            <h3 class="text-xl font-semibold text-white mb-3">Pattern Recognition</h3>
+            <p class="text-blue-200">Discover recurring themes in your dreams</p>
+        </div>
+    </div>
+
+    <div class="text-center">
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('interpret_dream') }}" class="cta-button">
+                <i data-lucide="sparkles"></i>
+                <span>Interpret Your Dream</span>
+            </a>
+        {% else %}
+            <a href="{{ url_for('register') }}" class="cta-button">
+                <i data-lucide="rocket"></i>
+                <span>Begin Your Journey</span>
+            </a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

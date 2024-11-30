@@ -1,0 +1,68 @@
+/* Base styles */
+.bg-deep-space {
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+
+/* Navigation */
+.nav-glass {
+    background: rgba(23, 25, 35, 0.3);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-button {
+    @apply inline-flex items-center px-4 py-2 rounded-lg text-blue-300 hover:text-white hover:bg-purple-600 transition-colors;
+}
+
+/* Feature cards */
+.feature-card {
+    @apply p-8 rounded-xl bg-opacity-10 backdrop-blur-lg border border-blue-400 border-opacity-20 hover:border-opacity-30 transition-all;
+    background: rgba(23, 25, 35, 0.3);
+}
+
+/* Footer */
+.footer-glass {
+    background: rgba(23, 25, 35, 0.3);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Stars Animation */
+#stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 1744px 122px #fff, 134px 1321px #fff, 92px 859px #fff;
+    animation: animStar 50s linear infinite;
+}
+
+#stars2 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 1744px 122px #fff, 134px 1321px #fff, 92px 859px #fff;
+    animation: animStar2 100s linear infinite;
+}
+
+#stars3 {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: 1744px 122px #fff, 134px 1321px #fff, 92px 859px #fff;
+    animation: animStar3 150s linear infinite;
+}
+
+@keyframes animStar {
+    from {transform: translateY(0px)}
+    to {transform: translateY(-2000px)}
+}
+
+@keyframes animStar2 {
+    from {transform: translateY(0px)}
+    to {transform: translateY(-2000px)}
+}
+
+@keyframes animStar3 {
+    from {transform: translateY(0px)}
+    to {transform: translateY(-2000px)}
+}

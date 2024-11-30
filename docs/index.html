@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore your dreams in a cosmic realm. DreamScape AI interprets your dreams with advanced AI, helping you understand your subconscious through a magical, space-themed journey.">
+    <title>Dreamer - AI Dream Interpreter</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+    
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-deep-space min-h-screen">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <nav class="nav-glass">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <i data-lucide="moon-star" class="w-8 h-8 text-blue-300 mr-2"></i>
+                    <span class="font-semibold text-white text-lg">Dreamer</span>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/Razex4777/Dreamer" class="nav-button" target="_blank">
+                        <i data-lucide="github" class="w-5 h-5 mr-1"></i>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-16">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-bold text-white mb-6">Explore Your Dreams with AI</h1>
+            <p class="text-xl text-blue-200 max-w-2xl mx-auto">Journey through your subconscious with our magical dream interpretation platform. Powered by advanced AI and wrapped in a cosmic experience.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div class="feature-card">
+                <i data-lucide="brain" class="w-12 h-12 text-purple-400 mb-4"></i>
+                <h3 class="text-2xl font-semibold text-white mb-3">AI Dream Analysis</h3>
+                <p class="text-blue-200">Advanced interpretation using Groq AI to understand the deeper meaning of your dreams.</p>
+            </div>
+            <div class="feature-card">
+                <i data-lucide="sparkles" class="w-12 h-12 text-purple-400 mb-4"></i>
+                <h3 class="text-2xl font-semibold text-white mb-3">Cosmic Interface</h3>
+                <p class="text-blue-200">Beautiful space-themed design with interactive elements and soothing animations.</p>
+            </div>
+            <div class="feature-card">
+                <i data-lucide="book" class="w-12 h-12 text-purple-400 mb-4"></i>
+                <h3 class="text-2xl font-semibold text-white mb-3">Dream Journal</h3>
+                <p class="text-blue-200">Keep track of your dreams and interpretations in your personal cosmic diary.</p>
+            </div>
+            <div class="feature-card">
+                <i data-lucide="lock" class="w-12 h-12 text-purple-400 mb-4"></i>
+                <h3 class="text-2xl font-semibold text-white mb-3">Secure & Private</h3>
+                <p class="text-blue-200">Your dreams are personal. We ensure they stay that way with strong security.</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-16">
+            <a href="https://github.com/Razex4777/Dreamer" class="inline-flex items-center px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors text-lg font-medium" target="_blank">
+                <i data-lucide="github" class="w-6 h-6 mr-2"></i>
+                Get Started
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer-glass mt-24">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <div class="text-blue-300">
+                    <p class="text-sm">Developed by: <span class="text-purple-300 font-medium">Gasmi M Abd el moumene</span> (Razex)</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/Razex4777" target="_blank" class="text-blue-300 hover:text-purple-300 transition-colors" title="GitHub">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.instagram.com/thevibevesse/profilecard/?igsh=dG1iZTZycGdrMzBu" target="_blank" class="text-blue-300 hover:text-purple-300 transition-colors" title="Instagram">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@thevibevesse?_t=8ro9BO9J53b&_r=1" target="_blank" class="text-blue-300 hover:text-purple-300 transition-colors" title="TikTok">
+                        <i data-lucide="video" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
